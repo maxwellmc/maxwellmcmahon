@@ -1,0 +1,230 @@
+html, body {
+  overflow-x:hidden;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  color: #262626;
+}
+
+.parallaxParent {
+  height: 40vh;
+  overflow: hidden;
+}
+
+.parallaxParent > * {
+  height: 200%;
+  position: relative;
+  top: -100%;
+}
+
+.parallaxImage {
+  background-size: cover;
+  background-position: center;
+}
+
+#parallax1Image {
+  background-image: url('../img/morningside.jpg');
+}
+
+#parallax2Image {
+  background-image: url('../img/beach.jpg');
+}
+
+#parallax3Image {
+  background-image: url('../img/waffles.jpg');
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Bitter', serif;
+  font-size: 2em;
+}
+
+h2 {
+  font-family: 'Bitter', serif;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+p {
+  color: #454545;
+}
+
+.chunk {
+  min-height: 20rem;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.chunk-about {
+  background: linear-gradient(to right, #8ee5e4, transparent 60%), url("../img/max-headshot.jpg") no-repeat 70% 50%;
+  background-size: cover;
+  min-height: 40rem;
+  max-height: 50rem;
+}
+
+.chunk-about-text {
+  width: 45%;
+}
+
+.chunk-about-text p {
+  font-size: 105%;
+}
+
+.chunk-about-headshot {
+  display: none;
+}
+
+.chunk-bio {
+  background: #ebf5ee;
+}
+
+.chunk-skills {
+  background: #7f557d;
+  color: #ebf5ee;
+
+  ul {
+    list-style: square;
+
+    li {
+      margin-bottom: 1rem;
+
+      .skill-logo{
+        width: 40px;
+        height: 40px;
+        object-fit: scale-down;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+}
+
+.chunk-career {
+  background: #d0f4ea;
+}
+
+.chunk-career h4 {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.chunk-career ul {
+  list-style: square;
+  font-size: 85%;
+}
+
+.chunk-portfolio {
+  background: #ebf5ee;
+
+  .carousel {
+    background-color: #232323;
+    border-radius: 5px;
+
+    .carousel-item {
+      height: 50rem;
+
+      .carousel-media-item {
+        object-fit: scale-down;
+        width: 100%;
+        height: 100%;
+      }
+	  
+	  .portfolio-caption {
+          z-index: 9000;
+          position: absolute;
+          bottom: 0;
+          padding: 1rem 2rem;
+          color: white;
+          background-color: rgba(50, 50, 50, 0.9);
+          font-size: 80%;
+          border-radius: 0 0 5px 5px;
+        }
+    }
+
+    .carousel-control-prev-icon, .carousel-control-next-icon{
+      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+    }
+  }
+
+}
+
+.chunk-contact {
+  background: #828a95;
+  color: #ebf5ee;
+
+  .contact-email {
+    font-family: 'Noto Serif', serif;
+    font-size: 200%;
+    font-style: italic;
+    background-color: #000;
+    color: transparent;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+/* Mobile */
+@media only screen
+and (max-device-width: 812px)  {
+
+  body {
+    font-size: 1.2rem;
+  }
+
+
+  .chunk-about {
+    background: #8ee5e4;
+    min-height: 0;
+  }
+
+  .chunk-about-text {
+    width: 100%;
+  }
+
+  .chunk-about-headshot {
+    display: block;
+    height: 20rem;
+    /* width: 100%; */
+    overflow: hidden;
+  }
+
+  .headshot {
+    object-position: 80% 50%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .chunk-portfolio .carousel-item {
+    height: auto;
+  }
+
+  .chunk-portfolio .portfolio-caption {
+    display: block;
+    position: relative;
+    padding: 1rem 2rem;
+    color: white;
+    background-color: rgba(50, 50, 50, 0.9);
+    font-size: 60%;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .carousel-media-item {
+    object-fit: scale-down;
+    object-position: 50% 0%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-email {
+    font-size: 100%;
+  }
+}
