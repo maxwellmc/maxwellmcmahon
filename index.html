@@ -113,53 +113,92 @@
 
     <div class="chunk chunk-portfolio p-md-5">
       <h2 class="text-center">My Portfolio</h2>
-      <div id="carouselControls" class="mt-5 carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-    			<div class="carousel-item active">
-            <a href="https://asmbs.org/escape-diabetes/risk-calculator" target="_blank" aria-label="View the Escape Diabetes surgery risk calculator">
-              <video class="d-block w-100 carousel-media-item" autoplay muted loop poster="data:image/gif,AAAA">
-                <source src="assets/vid/risk-calculator.webm" type="video/webm" />
-                <source src="assets/vid/risk-calculator.mp4" type="video/mp4" />
-              </video>
-            </a>
-    				<div class="portfolio-caption">
-    				  This is the world's first diabetes surgery risk calculator, for the ASMBS' "Escape Diabetes" site. The results are calculated with clean, object-oriented ES6+ JS, while still supporting IE11. The UI was designed and styled by me.
-    				</div>
-    			</div>
-          <div class="carousel-item">
-            <a href="https://asmbs.org/patients/find-a-provider" target="_blank" aria-label="View the ASMBS Provider Search">
-              <video class="d-block w-100 carousel-media-item" autoplay muted loop poster="data:image/gif,AAAA" style="background:transparent url('assets/vid/asmbs-provider-search-poster.jpg') no-repeat 0 0;background-size:contain;background-position:center;">
-                <source src="assets/vid/asmbs-provider-search.webm" type="video/webm" />
-                <source src="assets/vid/asmbs-provider-search.mp4" type="video/mp4" />
-              </video>
-            </a>
-            <div class="portfolio-caption">
-              The ASMBS' previous provider search had no map and retrieved providers by
-              looping through a manually-updated CSV file. My revamp
-              added Google Maps, Google Places Autocomplete, responsive member photos stored on S3,
-              and live results pulled directly from the RESTful database API that I designed.
+
+      <div class="portfolio-pieces-container mt-5">
+        <div class="row">
+          <div class="col-12 col-lg-6 portfolio-piece">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="d-inline">Diabetes Surgery Risk Calculator</h3>
+                <span class="float-right text-muted">2019</span>
+              </div>
+              <div class="d-block w-100">
+              <div class="aspect-ratio-box">
+                <video class="portfolio-piece-media" autoplay muted loop poster="data:image/gif,AAAA">
+                  <source src="assets/vid/risk-calculator.webm" type="video/webm" />
+                  <source src="assets/vid/risk-calculator.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+              <div class="card-body portfolio-caption">
+                This is the world's first diabetes surgery risk calculator, for the ASMBS' "Escape Diabetes" site. The results are calculated with clean, object-oriented ES6+ JS, while still supporting IE11. The UI was designed and styled by me.
+              </div>
+              <div class="card-footer">
+                <span class="portfolio-technologies text-muted">
+                  Written in: ES6+
+                </span>
+                <a href="https://asmbs.org/escape-diabetes/risk-calculator" class="btn btn-primary float-right" target="_blank" aria-label="View the Escape Diabetes surgery risk calculator">
+                  View it live
+                </a>
+              </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <a href="absorb/index.html" target="_blank" aria-label="Play the game Absorb">
-              <video class="d-block w-100 carousel-media-item" autoplay muted loop>
-                <source src="assets/vid/absorb.webm" type="video/webm" />
-                <source src="assets/vid/absorb.mp4" type="video/mp4" />
-              </video>
-            </a>
-            <div class="portfolio-caption">
-              Absorb is a browser game in which you are an orb floating through space, absorbing others who are smaller to stay alive, and avoiding larger predators. When you grow to full size, you split into two, and your goal is to not only survive, but to ensure the survival of your offspring.
+          <div class="co-12 col-lg-6 portfolio-piece">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="d-inline">ASMBS Provider Search</h3>
+                <span class="float-right text-muted">2018</span>
+              </div>
+              <div class="aspect-ratio-box">
+                <video class="portfolio-piece-media" autoplay muted loop poster="data:image/gif,AAAA">
+                  <source src="assets/vid/asmbs-provider-search.webm" type="video/webm" />
+                  <source src="assets/vid/asmbs-provider-search.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-body portfolio-caption">
+                The ASMBS' previous provider search had no map and retrieved providers by
+                looping through a manually-updated CSV file. My revamp
+                added Google Maps, Google Places Autocomplete, user geolocation, responsive member photos stored on Amazon CloudFront,
+                and live results pulled directly from the RESTful database API that I designed.
+              </div>
+              <div class="card-footer">
+                <span class="portfolio-technologies text-muted">
+                  Written in: ES6+
+                </span>
+                <a href="https://asmbs.org/patients/find-a-provider" class="btn btn-primary float-right" target="_blank" aria-label="View the ASMBS Provider Search">
+                  View it live
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="row mt-3">
+          <div class="col-6 portfolio-piece">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="d-inline">Absorb</h3>
+                <span class="float-right text-muted">2014</span>
+              </div>
+              <div class="aspect-ratio-box">
+                <video class="portfolio-piece-media" autoplay muted loop>
+                  <source src="assets/vid/absorb.webm" type="video/webm" />
+                  <source src="assets/vid/absorb.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-body portfolio-caption">
+                Absorb is a browser game in which you are an orb floating through space, absorbing others who are smaller to stay alive, and avoiding larger predators. When you grow to full size, you split into two, and your goal is to not only survive, but to ensure the survival of your offspring.
+              </div>
+              <div class="card-footer">
+                <span class="portfolio-technologies text-muted">
+                  Written in: Classic JavaScript (ES5)
+                </span>
+                <a href="absorb/index.html" class="btn btn-primary float-right" target="_blank" aria-label="Play the game Absorb">
+                  Play Absorb
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
