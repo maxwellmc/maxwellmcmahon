@@ -1,6 +1,8 @@
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities/text";
+@import "../../node_modules/bootstrap/scss/utilities/float";
 
 $max-seafoam: #ebf5ee;
 $max-eggplant: #7f557d;
@@ -72,6 +74,14 @@ p {
   padding-top: 75%;
   background: white;
   position: relative;
+}
+
+.inset {
+  background-color: #000;
+  color: transparent;
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .chunk {
@@ -148,6 +158,10 @@ p {
       background-color: lighten($secondary, 5%);
     }
 
+    .portfolio-piece-year {
+      @extend .float-right, .inset;
+    }
+
     .portfolio-piece-media {
       background-color: $gray-800;
       position: absolute;
@@ -157,17 +171,18 @@ p {
       height: 100%;
     }
 
+    .portfolio-caption {
+      font-family: 'Noto Serif', serif;
+      font-size: 70%;
+      background-color: darken($secondary, 15%);
+      color: darken($secondary-light, 15%);
+    }
+
     .portfolio-technologies {
       font-size: 80%;
     }
-  }
 
-  .portfolio-caption {
-     font-family: 'Noto Serif', serif;
-     font-size: 80%;
-    background-color: darken($secondary, 15%);
-    color: darken($secondary-light, 15%);
-   }
+  }
 
 }
 
@@ -176,20 +191,15 @@ p {
   color: $max-seafoam;
 
   .contact-email {
+    @extend .inset;
     font-family: 'Noto Serif', serif;
     font-size: 200%;
     font-style: italic;
-    background-color: #000;
-    color: transparent;
-    text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
-    background-clip: text;
-    -webkit-background-clip: text;
   }
 }
 
-/* Mobile */
-@media only screen
-and (max-device-width: 812px)  {
+/* Small screens */
+@media (max-device-width: 1024px)  {
 
   body {
     font-size: 1.2rem;

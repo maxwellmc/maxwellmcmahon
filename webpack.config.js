@@ -8,6 +8,7 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   mode: 'production',
+  watch: true,
   entry: './assets/js/index.js',
   output: {
     filename: 'main.js',
@@ -45,7 +46,12 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
           {
             loader: 'image-webpack-loader',
             options: {
