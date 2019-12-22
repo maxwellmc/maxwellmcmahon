@@ -4,6 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   mode: 'production',
@@ -75,7 +76,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new CopyPlugin([
       { from: './assets/img', to: 'img' }
     ]),
@@ -84,6 +85,7 @@ module.exports = {
       chunkFilename: '[id].css',
       ignoreOrder: false,
     }),
+    new WebpackNotifierPlugin({alwaysNotify: true}),
   ],
   optimization: {
     minimize: true,

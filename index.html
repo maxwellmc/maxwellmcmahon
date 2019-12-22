@@ -46,7 +46,7 @@
       <p>
         I feel especially fulfilled when I am improving American healthcare and education through web tech. As a mental health advocate, I feel very privileged whenever my talents and my passions can convene in that context.
       </p>
-      <h3>Diversity & Disability</h3>
+      <h3 class="mt-4">Diversity & Disability</h3>
       <p>
         I also have personal passions for increasing diversity in tech and accomodating disability through accessibility.
       </p>
@@ -117,16 +117,16 @@
       <div class="portfolio-pieces-container mt-5">
         <div class="row">
           <div class="col-12 col-lg-6 portfolio-piece">
-            <div class="card">
+            <div class="card bg-secondary">
               <div class="card-header">
                 <h3 class="d-inline">Diabetes Surgery Risk Calculator</h3>
                 <span class="float-right text-muted">2019</span>
               </div>
               <div class="d-block w-100">
               <div class="aspect-ratio-box">
-                <video class="portfolio-piece-media" autoplay muted loop poster="data:image/gif,AAAA">
-                  <source src="assets/vid/risk-calculator.webm" type="video/webm" />
-                  <source src="assets/vid/risk-calculator.mp4" type="video/mp4" />
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/risk-calculator-poster.jpg">
+                  <source data-src="assets/vid/risk-calculator.webm" type="video/webm" />
+                  <source data-src="assets/vid/risk-calculator.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -134,7 +134,7 @@
                 This is the world's first diabetes surgery risk calculator, for the ASMBS' "Escape Diabetes" site. The results are calculated with clean, object-oriented ES6+ JS, while still supporting IE11. The UI was designed and styled by me.
               </div>
               <div class="card-footer">
-                <span class="portfolio-technologies text-muted">
+                <span class="portfolio-technologies">
                   Written in: ES6+
                 </span>
                 <a href="https://asmbs.org/escape-diabetes/risk-calculator" class="btn btn-primary float-right" target="_blank" aria-label="View the Escape Diabetes surgery risk calculator">
@@ -144,15 +144,15 @@
             </div>
           </div>
           <div class="co-12 col-lg-6 portfolio-piece">
-            <div class="card">
+            <div class="card bg-secondary">
               <div class="card-header">
                 <h3 class="d-inline">ASMBS Provider Search</h3>
                 <span class="float-right text-muted">2018</span>
               </div>
               <div class="aspect-ratio-box">
-                <video class="portfolio-piece-media" autoplay muted loop poster="data:image/gif,AAAA">
-                  <source src="assets/vid/asmbs-provider-search.webm" type="video/webm" />
-                  <source src="assets/vid/asmbs-provider-search.mp4" type="video/mp4" />
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/asmbs-provider-search-poster.jpg">
+                  <source data-src="assets/vid/asmbs-provider-search.webm" type="video/webm" />
+                  <source data-src="assets/vid/asmbs-provider-search.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="card-body portfolio-caption">
@@ -162,7 +162,7 @@
                 and live results pulled directly from the RESTful database API that I designed.
               </div>
               <div class="card-footer">
-                <span class="portfolio-technologies text-muted">
+                <span class="portfolio-technologies">
                   Written in: ES6+
                 </span>
                 <a href="https://asmbs.org/patients/find-a-provider" class="btn btn-primary float-right" target="_blank" aria-label="View the ASMBS Provider Search">
@@ -174,15 +174,15 @@
         </div>
         <div class="row mt-3">
           <div class="co-12 col-lg-6 portfolio-piece">
-            <div class="card">
+            <div class="card bg-secondary">
               <div class="card-header">
                 <h3 class="d-inline">ASMBSdb</h3>
                 <span class="float-right text-muted">2017-2019</span>
               </div>
               <div class="aspect-ratio-box">
-                <video class="portfolio-piece-media" autoplay muted loop poster="data:image/gif,AAAA">
-                  <source src="assets/vid/asmbs-db.webm" type="video/webm" />
-                  <source src="assets/vid/asmbs-db.mp4" type="video/mp4" />
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/asmbs-db-poster.jpg">
+                  <source data-src="assets/vid/asmbs-db.webm" type="video/webm" />
+                  <source data-src="assets/vid/asmbs-db.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="card-body portfolio-caption">
@@ -194,29 +194,29 @@
                 Planstone.
               </div>
               <div class="card-footer">
-                <span class="portfolio-technologies text-muted">
+                <span class="portfolio-technologies">
                   Written in: PHP 7.3 (with Symfony 4, MySQL)
                 </span>
               </div>
             </div>
           </div>
           <div class="col-6 portfolio-piece">
-            <div class="card">
+            <div class="card bg-secondary">
               <div class="card-header">
                 <h3 class="d-inline">Absorb</h3>
                 <span class="float-right text-muted">2014</span>
               </div>
               <div class="aspect-ratio-box">
-                <video class="portfolio-piece-media" autoplay muted loop>
-                  <source src="assets/vid/absorb.webm" type="video/webm" />
-                  <source src="assets/vid/absorb.mp4" type="video/mp4" />
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/absorb-poster.jpg">
+                  <source data-src="assets/vid/absorb.webm" type="video/webm" />
+                  <source data-src="assets/vid/absorb.mp4" type="video/mp4" />
                 </video>
               </div>
               <div class="card-body portfolio-caption">
                 Absorb is a browser game in which you are an orb floating through space, absorbing others who are smaller to stay alive, and avoiding larger predators. When you grow to full size, you split into two, and your goal is to not only survive, but to ensure the survival of your offspring.
               </div>
               <div class="card-footer">
-                <span class="portfolio-technologies text-muted">
+                <span class="portfolio-technologies">
                   Written in: Classic JavaScript (ES5)
                 </span>
                 <a href="absorb/index.html" class="btn btn-primary float-right" target="_blank" aria-label="Play the game Absorb">

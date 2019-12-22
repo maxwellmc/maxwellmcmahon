@@ -2,6 +2,11 @@
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
 
+$max-seafoam: #ebf5ee;
+$max-eggplant: #7f557d;
+$max-turqoise: #d0f4ea;
+$secondary-light: lighten($secondary, 60%);
+
 html, body {
   overflow-x:hidden;
 }
@@ -94,12 +99,12 @@ p {
 }
 
 .chunk-bio {
-  background: #ebf5ee;
+  background: $max-seafoam;
 }
 
 .chunk-skills {
-  background: #7f557d;
-  color: #ebf5ee;
+  background: $max-eggplant;
+  color: $max-seafoam;
 
   ul {
     list-style: square;
@@ -119,7 +124,7 @@ p {
 }
 
 .chunk-career {
-  background: #d0f4ea;
+  background: $max-turqoise;
 }
 
 .chunk-career h4 {
@@ -133,9 +138,15 @@ p {
 }
 
 .chunk-portfolio {
-  background: #ebf5ee;
+  background: $max-seafoam;
 
   .portfolio-piece {
+
+    color: $secondary-light;
+
+    .card-header {
+      background-color: lighten($secondary, 5%);
+    }
 
     .portfolio-piece-media {
       background-color: $gray-800;
@@ -154,13 +165,15 @@ p {
   .portfolio-caption {
      font-family: 'Noto Serif', serif;
      font-size: 80%;
+    background-color: darken($secondary, 15%);
+    color: darken($secondary-light, 15%);
    }
 
 }
 
 .chunk-contact {
   background: #828a95;
-  color: #ebf5ee;
+  color: $max-seafoam;
 
   .contact-email {
     font-family: 'Noto Serif', serif;
