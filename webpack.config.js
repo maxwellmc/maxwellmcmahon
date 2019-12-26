@@ -5,10 +5,10 @@ const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const ImageminPlugin = require("imagemin-webpack");
 
 module.exports = {
   mode: 'production',
-  watch: true,
   entry: './assets/js/index.js',
   output: {
     filename: 'main.js',
@@ -30,7 +30,8 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          'postcss-loader',
         ]
       },
       {
@@ -39,6 +40,7 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           'css-loader',
+          'postcss-loader',
           // Compiles Sass to CSS
           'sass-loader',
         ],
@@ -52,37 +54,12 @@ module.exports = {
               name: '[name].[ext]',
             },
           },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 70
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75
-              }
-            }
-          },
         ]
-
       }
     ],
   },
   plugins: [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new CopyPlugin([
       { from: './assets/img', to: 'img' }
     ]),
@@ -92,6 +69,25 @@ module.exports = {
       ignoreOrder: false,
     }),
     new WebpackNotifierPlugin({alwaysNotify: true}),
+    new ImageminPlugin({
+      imageminOptions: {
+        plugins: [
+          ["gifsicle", { interlaced: true }],
+          ["mozjpeg", { quality: 50 }],
+          ["pngquant", {}],
+          [
+            "svgo",
+            {
+              plugins: [
+                {
+                  removeViewBox: false
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    })
   ],
   optimization: {
     minimize: true,
