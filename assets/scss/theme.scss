@@ -173,6 +173,7 @@ p {
 
     .portfolio-caption {
       font-family: 'Noto Serif', serif;
+      font-style: italic;
       font-size: 70%;
       background-color: darken($secondary, 15%);
       color: darken($secondary-light, 15%);
@@ -205,6 +206,17 @@ p {
     font-size: 1.2rem;
   }
 
+  #parallax1Image {
+    background-image: url('../img/morningside-small.jpg');
+  }
+
+  #parallax2Image {
+    background-image: url('../img/beach-small.jpg');
+  }
+
+  #parallax3Image {
+    background-image: url('../img/waffles-small.jpg');
+  }
 
   .chunk-about {
     background: #8ee5e4;
@@ -250,7 +262,9 @@ p {
     height: 100%;
   }
 
-  .contact-email {
-    font-size: 100%;
+  .chunk-contact {
+    .contact-email {
+      font-size: 100%;
+    }
   }
 }
