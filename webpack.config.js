@@ -2,6 +2,10 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
+const ImageminPlugin = require("imagemin-webpack");
 
 module.exports = {
   mode: 'production',
@@ -24,15 +28,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           'css-loader',
+          'postcss-loader',
           // Compiles Sass to CSS
           'sass-loader',
         ],
@@ -43,35 +51,10 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              publicPath: 'dist',
+              name: '[name].[ext]',
             },
           },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 70
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: '65-90',
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              // the webp option will enable WEBP
-              webp: {
-                quality: 75
-              }
-            }
-          },
         ]
-
       }
     ],
   },
@@ -80,9 +63,37 @@ module.exports = {
     new CopyPlugin([
       { from: './assets/img', to: 'img' }
     ]),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false,
+    }),
+    new WebpackNotifierPlugin({alwaysNotify: true}),
+    new ImageminPlugin({
+      imageminOptions: {
+        plugins: [
+          ["gifsicle", { interlaced: true }],
+          ["mozjpeg", { quality: 50 }],
+          ["pngquant", {}],
+          [
+            "svgo",
+            {
+              plugins: [
+                {
+                  removeViewBox: false
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    })
   ],
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin()],
+    minimizer: [
+      new TerserPlugin(),
+      new OptimizeCSSAssetsPlugin()
+    ],
   },
 };

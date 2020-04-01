@@ -1,3 +1,14 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities/text";
+@import "../../node_modules/bootstrap/scss/utilities/float";
+
+$max-seafoam: #ebf5ee;
+$max-eggplant: #7f557d;
+$max-turqoise: #d0f4ea;
+$secondary-light: lighten($secondary, 60%);
+
 html, body {
   overflow-x:hidden;
 }
@@ -57,6 +68,22 @@ p {
   color: #454545;
 }
 
+.aspect-ratio-box {
+  height: 0;
+  overflow: hidden;
+  padding-top: 75%;
+  background: white;
+  position: relative;
+}
+
+.inset {
+  background-color: #000;
+  color: transparent;
+  text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
 .chunk {
   min-height: 20rem;
   padding: 2rem 2rem 2rem 2rem;
@@ -82,12 +109,12 @@ p {
 }
 
 .chunk-bio {
-  background: #ebf5ee;
+  background: $max-seafoam;
 }
 
 .chunk-skills {
-  background: #7f557d;
-  color: #ebf5ee;
+  background: $max-eggplant;
+  color: $max-seafoam;
 
   ul {
     list-style: square;
@@ -107,7 +134,7 @@ p {
 }
 
 .chunk-career {
-  background: #d0f4ea;
+  background: $max-turqoise;
 }
 
 .chunk-career h4 {
@@ -121,64 +148,75 @@ p {
 }
 
 .chunk-portfolio {
-  background: #ebf5ee;
+  background: $max-seafoam;
 
-  .carousel {
-    background-color: #232323;
-    border-radius: 5px;
+  .portfolio-piece {
 
-    .carousel-item {
-      height: 50rem;
+    color: $secondary-light;
 
-      .carousel-media-item {
-        object-fit: scale-down;
-        width: 100%;
-        height: 100%;
-      }
-	  
-	  .portfolio-caption {
-          z-index: 9000;
-          position: absolute;
-          bottom: 0;
-          padding: 1rem 2rem;
-          color: white;
-          background-color: rgba(50, 50, 50, 0.9);
-          font-size: 80%;
-          border-radius: 0 0 5px 5px;
-        }
+    .card-header {
+      background-color: lighten($secondary, 5%);
     }
 
-    .carousel-control-prev-icon, .carousel-control-next-icon{
-      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+    .portfolio-piece-year {
+      @extend .float-right, .inset;
     }
+
+    .portfolio-piece-media {
+      background-color: $gray-800;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .portfolio-caption {
+      font-family: 'Noto Serif', serif;
+      font-style: italic;
+      font-size: 70%;
+      background-color: darken($secondary, 15%);
+      color: darken($secondary-light, 15%);
+    }
+
+    .portfolio-technologies {
+      font-size: 80%;
+    }
+
   }
 
 }
 
 .chunk-contact {
   background: #828a95;
-  color: #ebf5ee;
+  color: $max-seafoam;
 
   .contact-email {
+    @extend .inset;
     font-family: 'Noto Serif', serif;
     font-size: 200%;
     font-style: italic;
-    background-color: #000;
-    color: transparent;
-    text-shadow: 0px 1px 1px rgba(255,255,255,0.3);
-    background-clip: text;
-    -webkit-background-clip: text;
   }
 }
 
-/* Mobile */
-@media only screen
-and (max-device-width: 812px)  {
+/* Small screens */
+@media (max-device-width: 1024px)  {
 
   body {
     font-size: 1.2rem;
   }
 
+  #parallax1Image {
+    background-image: url('../img/morningside-small.jpg');
+  }
+
+  #parallax2Image {
+    background-image: url('../img/beach-small.jpg');
+  }
+
+  #parallax3Image {
+    background-image: url('../img/waffles-small.jpg');
+  }
 
   .chunk-about {
     background: #8ee5e4;
@@ -224,7 +262,9 @@ and (max-device-width: 812px)  {
     height: 100%;
   }
 
-  .contact-email {
-    font-size: 100%;
+  .chunk-contact {
+    .contact-email {
+      font-size: 100%;
+    }
   }
 }

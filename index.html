@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="Description" content="The professional website of Maxwell McMahon, a web app developer located in Gainesville, FL.">
 
+  <!-- CSS -->
+  <link href="dist/main.css" rel="stylesheet">
+
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Bitter:700|Lato:400,400i,700|Noto+Serif:400i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bitter:700|Lato:400,400i,700|Noto+Serif:400i&display=swap" rel="stylesheet">
 
   <title>Max McMahon - Web App Developer | Gainesville, FL</title>
 </head>
@@ -16,7 +19,7 @@
   <div class="container-fluid">
 
     <div class="chunk-about-headshot">
-      <img src="assets/img/max-headshot.jpg" class="headshot" alt="" />
+      <img src="assets/img/max-headshot-small.jpg" class="headshot" alt="" />
     </div>
 
     <div class="chunk chunk-about">
@@ -39,11 +42,11 @@
 
     <div class="chunk chunk-bio p-md-5">
       <h2 class="text-center pb-2">My Passions</h2>
-      <h3>Healthcare</h3>
+      <h3>Your One-Stop App Shop</h3>
       <p>
-        I feel especially fulfilled when I am improving American healthcare and education through web tech. As a mental health advocate, I feel very privileged whenever my talents and my passions can convene in that context.
+        My experience so far has been as a full-stack developer, creating apps from concept to release and being involved in everything from the server design to supporting the end-users. I'm super passionate about doing whatever it takes to create beautiful interfaces and rock-solid backends that totally solve the user's problem.
       </p>
-      <h3>Diversity & Disability</h3>
+      <h3 class="mt-4">Diversity & Disability</h3>
       <p>
         I also have personal passions for increasing diversity in tech and accomodating disability through accessibility.
       </p>
@@ -106,54 +109,127 @@
         <li>Developed custom Maximo solutions in Java to extend existing non-mobile software</li>
         <li>Created an app that was featured at IBM InterConnect 2015, and co-developed a drone app featured in Uptime Magazine and showcased at PANMU 2015</li>
       </ul>
+
+      <div class="text-center mt-4">
+        <a href="https://www.linkedin.com/in/max-mcmahon-16437775/" class="btn btn-primary" target="_blank">Check out my LinkedIn</a>
+      </div>
     </div>
 
     <div class="chunk chunk-portfolio p-md-5">
       <h2 class="text-center">My Portfolio</h2>
-      <div id="carouselControls" class="mt-5 carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-    			<div class="carousel-item active">
-            <a href="https://asmbs.org/escape-diabetes/risk-calculator" target="_blank" aria-label="View the Escape Diabetes surgery risk calculator">
-      				<img src="dist\img\risk-calculator.png" class="carousel-media-item">
-            </a>
-    				<div class="portfolio-caption">
-    				  This is the world's first diabetes surgery risk calculator, for the ASMBS' "Escape Diabetes" site. The results are calculated with clean, object-oriented ES6+ JS, while still supporting IE11. The UI was designed and styled by me.
-    				</div>
-    			</div>
-          <div class="carousel-item">
-            <a href="https://asmbs.org/patients/find-a-provider" target="_blank" aria-label="View the ASMBS Provider Search">
-              <video class="d-block w-100 carousel-media-item" autoplay muted loop poster="data:image/gif,AAAA" style="background:transparent url('assets/vid/asmbs-provider-search-poster.jpg') no-repeat 0 0;background-size:contain;background-position:center;">
-                <source src="assets/vid/asmbs-provider-search.webm" type="video/webm" />
-                <source src="assets/vid/asmbs-provider-search.mp4" type="video/mp4" />
-              </video>
-            </a>
-            <div class="portfolio-caption">
-              The ASMBS' previous provider search had no map and retrieved providers by
-              looping through a manually-updated CSV file. My revamp
-              added Google Maps, Google Places Autocomplete, responsive member photos stored on S3,
-              and live results pulled directly from the RESTful database API that I designed.
+
+      <div class="portfolio-pieces-container mt-5">
+        <div class="row">
+          <div class="col-12 col-lg-6 portfolio-piece">
+            <div class="card bg-secondary">
+              <div class="card-header">
+                <h3 class="d-inline">Diabetes Surgery Risk Calculator</h3>
+                <span class="portfolio-piece-year">2019</span>
+              </div>
+              <div class="d-block w-100">
+              <div class="aspect-ratio-box">
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/risk-calculator-poster.jpg">
+                  <source data-src="assets/vid/risk-calculator.webm" type="video/webm" />
+                  <source data-src="assets/vid/risk-calculator.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+              <div class="card-body portfolio-caption">
+                This is the world's first diabetes surgery risk calculator, for the ASMBS' "Escape Diabetes" site. The results are calculated with clean, object-oriented ES6+ JS, while still supporting IE11. The UI was designed and styled by me.
+              </div>
+              <div class="card-footer">
+                <span class="portfolio-technologies">
+                  Written in: ES6+
+                </span>
+                <a href="https://asmbs.org/escape-diabetes/risk-calculator" class="btn btn-primary float-right" target="_blank" aria-label="View the Escape Diabetes surgery risk calculator">
+                  View it live
+                </a>
+              </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <a href="absorb/index.html" target="_blank" aria-label="Play the game Absorb">
-              <video class="d-block w-100 carousel-media-item" autoplay muted loop>
-                <source src="assets/vid/absorb.webm" type="video/webm" />
-                <source src="assets/vid/absorb.mp4" type="video/mp4" />
-              </video>
-            </a>
-            <div class="portfolio-caption">
-              Absorb is a browser game in which you are an orb floating through space, absorbing others who are smaller to stay alive, and avoiding larger predators. When you grow to full size, you split into two, and your goal is to not only survive, but to ensure the survival of your offspring.
+          <div class="co-12 col-lg-6 portfolio-piece mt-3 mt-lg-0">
+            <div class="card bg-secondary">
+              <div class="card-header">
+                <h3 class="d-inline">ASMBS Provider Search</h3>
+                <span class="portfolio-piece-year">2018</span>
+              </div>
+              <div class="aspect-ratio-box">
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/asmbs-provider-search-poster.jpg">
+                  <source data-src="assets/vid/asmbs-provider-search.webm" type="video/webm" />
+                  <source data-src="assets/vid/asmbs-provider-search.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-body portfolio-caption">
+                The ASMBS' previous provider search had no map and retrieved providers by
+                looping through a manually-updated CSV file. My revamp
+                added Google Maps, Google Places Autocomplete, user geolocation, responsive member photos stored on Amazon CloudFront,
+                and live results pulled directly from the RESTful database API that I designed.
+              </div>
+              <div class="card-footer">
+                <span class="portfolio-technologies">
+                  Written in: ES6+
+                </span>
+                <a href="https://asmbs.org/patients/find-a-provider" class="btn btn-primary float-right" target="_blank" aria-label="View the ASMBS Provider Search">
+                  View it live
+                </a>
+              </div>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouseleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="row mt-3">
+          <div class="co-12 col-lg-6 portfolio-piece">
+            <div class="card bg-secondary">
+              <div class="card-header">
+                <h3 class="d-inline">ASMBSdb</h3>
+                <span class="portfolio-piece-year">2017-2019</span>
+              </div>
+              <div class="aspect-ratio-box">
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/asmbs-db-poster.jpg">
+                  <source data-src="assets/vid/asmbs-db.webm" type="video/webm" />
+                  <source data-src="assets/vid/asmbs-db.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-body portfolio-caption">
+                Inherited from another developer, this custom-built association management app allows staff to manage members, invoices,
+                committees, and more. I have added a module for running and snapshotting reports, a module for
+                managing their annual events (attended by over 5,000), and a system for asynchronously importing
+                legacy event records (including a complex person-matching algorithm). There is also a full BDD testing suite
+                to catch bugs and prevent regressions, and bulletproof integrations with MailChimp, Cvent, and
+                Planstone.
+              </div>
+              <div class="card-footer">
+                <span class="portfolio-technologies">
+                  Written in: PHP 7.3 (with Symfony 4, MySQL)
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 portfolio-piece mt-3 mt-lg-0">
+            <div class="card bg-secondary">
+              <div class="card-header">
+                <h3 class="d-inline">Absorb</h3>
+                <span class="portfolio-piece-year">2014</span>
+              </div>
+              <div class="aspect-ratio-box">
+                <video class="lazy-load portfolio-piece-media" autoplay muted loop playsinline poster="assets/vid/absorb-poster.jpg">
+                  <source data-src="assets/vid/absorb.webm" type="video/webm" />
+                  <source data-src="assets/vid/absorb.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="card-body portfolio-caption">
+                Absorb is a browser game in which you are an orb floating through space, absorbing others who are smaller to stay alive, and avoiding larger predators. When you grow to full size, you split into two, and your goal is to not only survive, but to ensure the survival of your offspring.
+              </div>
+              <div class="card-footer">
+                <span class="portfolio-technologies">
+                  Written in: Classic JavaScript (ES5)
+                </span>
+                <a href="absorb/index.html" class="btn btn-primary float-right" target="_blank" aria-label="Play the game Absorb">
+                  Play Absorb
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -166,6 +242,10 @@
       <p class="my-5 text-center contact-email">
         wmaxmcmahon@gmail.com
       </p>
+      <div class="text-center mt-4">
+        <p>This site's source is on GitHub!</p>
+        <a href="https://github.com/maxwellmc/maxwellmcmahon" class="btn btn-primary" target="_blank">Review my code</a>
+      </div>
     </div>
 
   </div>
